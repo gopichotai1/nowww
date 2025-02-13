@@ -1,0 +1,22 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_form_register.css') }}">
+</head>
+<body>
+    <div class="container">
+    
+    <h1>Forgot Password</h1>
+    <form method="post" action="{{ url_for('forgotu') }}">
+            <input type="text" id="Username" name="Username" placeholder="Email" required>
+			{% if err %}
+			<p style="color:red;">{{ err }}</p>
+			{% endif %}
+    <p class="form-actions">
+	
+    <input type="submit" value="Next" name="next"  /></a>
+    </p>
+
+</form>
+</body>
+</html>

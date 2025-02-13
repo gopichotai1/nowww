@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+        {% for image in images %}
+            <img src="{{ url_for('static', filename='upload/' + image[0]) }}" alt="Round Image"  id="image">
+                        
+        {% endfor %}
+            {% for Comment in comment %}
+            <p>Comment: {{ Comment[0] }}</p>
+			{% endfor %}
+			{% for user in users %}
+            <p>File Name:  {{ user[0] }}</p><br>
+            <p>User Name: {{ user[1] }}</p><br>			
+			<p>Video Category:  {{ user[2] }}</p>
+        {% endfor %}
+        <br><br><br>
+       
+</body>
+</html>

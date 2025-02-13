@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vtube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Image</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Choose Image</label>
+                <input type="file" class="form-control" id="file" name="file" required>
+            </div>
+            <input type="submit" class="btn btn-primary" id="video_upload" name="Upload">
+        </form>
+    </div>
+</body>
+</html>

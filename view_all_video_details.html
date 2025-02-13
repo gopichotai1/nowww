@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+<title></title>
+    <meta charset="UTF-8">
+    <title>  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<center>
+<table>
+	<h2>Video Detail</h2>
+    <table border="1%">
+	
+					
+			<th>File Name</th>
+			<th>Upload time</td>
+			<th>Username</td>
+			<th>Category</th>
+			<th>Likes</th>
+			<th>Regstration Id</th>
+
+			
+
+
+        {% for user in users %}
+        <tr>
+            <th>{{ user[1] }}</th>
+	
+			
+            <td>{{ user[2] }}</td>
+	
+			
+            <td>{{ user[3] }}</td>
+			
+			<td>{{ user[4] }}</td>
+		
+			
+			
+            <td>{{ user[5] }}</td>
+			
+			<td>{{ user[6] }}</td>
+		
+            <td>{{ user[7] }}</td>
+			
+            <td>{{ user[8] }}</td>
+			
+            <td>{{ user[9] }}</td>
+			
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </tr>
+        {% endfor %}
+
+	
+</table>
+<br><br><br>
+</center>
+</div>
+
+</body>
+</html>

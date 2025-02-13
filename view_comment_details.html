@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+<title></title>
+    <meta charset="UTF-8">
+    <title>  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<center>
+<table>
+	<h2>Comments</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Comment by</th>
+                <th>Comment on Filename</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <tr></tr>
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table><br><br><br>
+</center>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+<title></title>
+    <meta charset="UTF-8">
+    <title>  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="your_account">
+	<a href="{{ url_for('account') }}">Edit your profile</a><br><br>
+	<a href="{{ url_for('change_password') }}">Change Password</a><br><br>
+	<a href="{{ url_for('your_video') }}">Your videos</a><br><br>
+	<a href="{{ url_for('comment_show') }}">Comments</a><br><br>
+	<a href="{{ url_for('saved_videos') }}" >Saved videos</a><br><br>
+    <a href="{{ url_for('liked_video') }}" >Liked videos</a><br><br>
+	<a href="{{ url_for('video_upload') }}" >Add videos</a><br><br>
+	<form action="{{ url_for('logout') }}">
+    <input type="submit" name="Logout" id="logout" value="Logout">
+	</form>
+</div>
+
+</body>
+</html>

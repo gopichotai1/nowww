@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+<title></title>
+    <meta charset="UTF-8">
+    <title>  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<center>
+<table>
+	<h2>Account</h2>
+    <table>
+        
+        {% for user in users %}
+        <tr><td>Email</td>
+            <td>{{ user[1] }}</td>
+			<td> <a href="{{ url_for('firstname') }}"  >Edit</a> </td>
+			</tr><tr>
+			
+			<td>Profile_image</td>
+            <td>{{ user[3] }}</td>
+			<td> <a href="{{ url_for('phonenumber') }}"  >Edit</a> </td>
+			
+			</tr><tr>
+			
+			</tr><tr>
+			<tr></tr>
+            <tr></tr>
+        </tr>
+        {% endfor %}
+	
+</table>
+</center>
+</div>
+
+</body>
+</html>

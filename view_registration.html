@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+<title></title>
+    <meta charset="UTF-8">
+    <title>  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<center>
+<table>
+	<h2>Account</h2>
+    <table border="1%">
+	<th>Firstname</th>
+	<th>Lastname</th>
+			<th>Email</th>			
+			<th>Phone number</th>
+			<th>Age</td>
+			<th>Genger</td>
+			<th>Security Question</th>
+			<th>Ans</th>
+			<th>You created Account on</th>
+
+			<th>Profile_image</th>
+
+
+        {% for user in users %}
+        <tr>
+            <th>{{ user[1] }}</th>
+	
+			
+            <td>{{ user[2] }}</td>
+	
+			
+            <td>{{ user[3] }}</td>
+			
+			<td>{{ user[4] }}</td>
+		
+			
+			
+            <td>{{ user[6] }}</td>
+			
+			<td>{{ user[7] }}</td>
+		
+            <td>{{ user[8] }}</td>
+			
+            <td>{{ user[9] }}</td>
+			
+            <td>{{ user[10] }}</td>
+			
+			
+            <td>{{ user[11] }}</td>
+            
+			<tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+           
+        </tr>
+        {% endfor %}
+	
+</table>
+</center>
+</div>
+
+</body>
+</html>

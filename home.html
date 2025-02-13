@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        
+        
+        <div class="mt-4">
+		
+            {% for video in videos %}
+			
+                <div class="card_mb-3" id="card">
+                    <div class="card-body" id="card-body">
+                        <h5 class="card-title" id="card-title">Title: {{ video[1] }}</h5>
+						{% for image in images %}
+						{%if image[1]==video[6]%}
+						<img src="{{ url_for('static', filename='upload/' + image[0]) }}" alt="Round Image"  class="img">
+						{% endif %}
+						{% endfor %}
+                        <p class="card-text" id="card-text">Uploaded by: {{ video[3] }}</p>
+                        <p class="card-text" id="card-font">Uploaded on: {{ video[2] }}</p>
+						<p class="card-text" id="card-font">category: {{ video[4] }}</p>
+                        <video width="800" height="500" controls>
+                            <source src="{{ url_for('static', filename='uploads/' + video[1]) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video><br>
+                        <form action="{{ url_for('comment', video_id=video[0]) }}" method="POST">
+						 <input type="text" placeholder="Comment..." id="textbox" name="textbox"><button id="search" name="search"></button><br>
+						</form>
+                        <form action="{{ url_for('save', video_id=video[0]) }}" method="POST">
+						<button id="save_btn"> &nbsp&nbsp&nbsp&nbsp </button></form>
+						<form action="{{ url_for('like_video', video_id=video[0]) }}" method="POST">
+						<button id="showlikeButton" onclick="handleClick()"> <p><h5>&nbsp&nbsp {{ video[5] }}</h5>
+						<br>
+						</p> </form></button>
+                        
+         
+					
+                </div><br><br><br><br>
+            {% endfor %}
+            <div class="container">
+        
+        
+                <div class="mt-4">
+                    {% for video in rows %}
+                        <div class="card_mb-3" id="card">
+                    <div class="card-body" id="card-body">
+                        <h5 class="card-title" id="card-title">Title: {{ video[1] }}</h5>
+						{% for image in images %}
+						{%if image[1]==video[6]%}
+						<img src="{{ url_for('static', filename='upload/' + image[0]) }}" alt="Round Image"  class="img">
+						{% endif %}
+						{% endfor %}
+                        <p class="card-text" id="card-text">Uploaded by: {{ video[3] }}</p>
+                        <p class="card-text" id="card-font">Uploaded on: {{ video[2] }}</p>
+						<p class="card-text" id="card-font">category: {{ video[4] }}</p>
+                        <video width="800" height="500" controls>
+                            <source src="{{ url_for('static', filename='uploads/' + video[1]) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video><br>
+                        <form action="{{ url_for('comment', video_id=video[0]) }}" method="POST">
+						 <input type="text" placeholder="Comment..." id="textbox" name="textbox"><button id="search" name="search"></button><br>
+						</form>
+                        <form action="{{ url_for('save', video_id=video[0]) }}" method="POST">
+						<button id="save_btn"> &nbsp&nbsp&nbsp&nbsp </button></form>
+						<form action="{{ url_for('like_video', video_id=video[0]) }}" method="POST">
+						<button id="showlikeButton" onclick="handleClick()"> <p><h5>&nbsp&nbsp {{ video[5] }}</h5>
+						
+						<br>
+						</p> </form></button>
+                        
+         
+					
+                </div><br><br><br><br>
+                    {% endfor %}
+
+            {% for eml in emails %}
+            <p>Email: {{ eml[0] }}</p>
+            <a href="{{ url_for('search') }}"  >Account</a>
+			{% endfor %}
+			
+            {% for Comment in comment %}
+            <p>Comment: {{ Comment[0] }}</p>
+			{% endfor %}
+			{% for user in users %}
+            <p>File Name:  {{ user[0] }}</p><br>
+            <p>User Name: {{ user[1] }}</p><br>			
+			<p>Video Category:  {{ user[2] }}</p>
+        {% endfor %}
+        <br><br><br>
+        </div>
+    </div><br><br><br><br>
+</body>
+</html>
